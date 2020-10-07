@@ -14,7 +14,12 @@ const GameGrid: React.FC<IProps> = ({}) => {
         var initTiles: [boolean[]] = [[]];
         for(var i = 0; i < 5; i++){
             for(var j = 0; j < 5; j++){
-                initTiles[i].push(true);
+                var value = Math.random();
+                if(value > 0.5 ){
+                    initTiles[i].push(true);
+                } else {
+                    initTiles[i].push(false);
+                }
             }
             if(i < 4){
                 initTiles.push([]);

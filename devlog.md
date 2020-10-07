@@ -3,7 +3,7 @@
 ## Goal (MVP - Lights Off)
 Create an implementation of Lights Out using React
 - [X] The game should display a 5x5 grid of tiles that can be in an "on/lit" or "off/unlit" state.
-- [ ] The game should start in a random state (some tiles on, some off).
+- [X] The game should start in a random state (some tiles on, some off).
 - [ ] Clicking a tile should toggle the tile + all adjacent tiles.
 - [ ] The game should track and display the total number of moves.
 - [ ] The game should have a "restart" button which resets the move count to zero and the game to a random state.
