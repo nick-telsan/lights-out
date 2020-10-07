@@ -9,6 +9,7 @@ interface IProps {
 const GameGrid: React.FC<IProps> = ({}) => {
     const [tiles, setTiles] = useState<Array<Array<boolean>>>([[]]);
     const [moves, setMoves] = useState<number>(0);
+    const [victory, setVictory] = useState<boolean>(false);
 
     // Set up grid
     useEffect(() => {
@@ -30,6 +31,7 @@ const GameGrid: React.FC<IProps> = ({}) => {
 
         initTiles = randomizeTiles(initTiles);
         setMoves(0);
+        setVictory(false);
         setTiles(initTiles);
     }
 
@@ -83,8 +85,20 @@ const GameGrid: React.FC<IProps> = ({}) => {
         // 2D array is not agreeing with me. Concat the new array on the to old one and then slice off the old one...
         setTiles(tiles.concat(tempTiles).slice(5));
         setMoves(moves + 1);
+        checkVictory();
     }
-        
+
+    const checkVictory = () => {
+        var test: boolean = true;
+        tiles.map((rows) => {
+            rows.map((tile) => {
+                if(tile === true){
+                    test = false;
+                }
+            })
+        });
+        setVictory(test);
+    }
 
     return(
         <div>
@@ -99,6 +113,11 @@ const GameGrid: React.FC<IProps> = ({}) => {
                 <button className="button-restart" onClick={startGame}>Restart</button>
                 <h4>Moves: {moves}</h4>
             </div>
+            {victory ? 
+                <div>You did it!</div>
+            :
+                null
+            }
         </div>
     )
 }
