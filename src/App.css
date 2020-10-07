@@ -52,3 +52,13 @@
   border-width: 2px;
   border-style: solid;
 }
+
+.bottom-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-restart {
+  padding: 15px;
+  margin: 35px;
+}
