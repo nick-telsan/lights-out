@@ -114,7 +114,10 @@ const GameGrid: React.FC<IProps> = ({}) => {
                 <h4>Moves: {moves}</h4>
             </div>
             {victory ? 
-                <div>You did it!</div>
+                <div className="victory-overlay">
+                    <h1>You did it!</h1>
+                    <button className="button-restart" onClick={startGame}>Play Again</button>
+                </div>
             :
                 null
             }
