@@ -2,17 +2,20 @@ import React from 'react';
 
 interface IProps {
     value: boolean;
+    callback: any;
+    row: number;
+    col: number;
 }
 
-const Tile: React.FC<IProps> = ({value}) => {
+const Tile: React.FC<IProps> = ({value, callback, row, col}) => {
 
     const handleClick = () => {
-        console.log(value);
+        callback(row, col);
     }
         
 
     return(
-        <button className="Tile" onClick={handleClick}/>
+        <button className={value ? "lit-Tile" : "unlit-Tile"} onClick={handleClick}/>
     )
 }
 

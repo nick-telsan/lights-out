@@ -9,23 +9,28 @@ interface IProps {
 const GameGrid: React.FC<IProps> = ({}) => {
     const [tiles, setTiles] = useState<Array<Array<boolean>>>([[]]);
 
+    // Set up grid
     useEffect(() => {
-        console.log('Component mounted');
-        startGame();
-    }, []);
-
-    const startGame = () => {
         var initTiles: [boolean[]] = [[]];
         for(var i = 0; i < 5; i++){
             for(var j = 0; j < 5; j++){
-                initTiles[i].push(false);
+                initTiles[i].push(true);
             }
             if(i < 4){
                 initTiles.push([]);
             }
             
         }
-        setTiles(tiles.concat(initTiles));
+        setTiles(initTiles);
+        console.log(tiles);
+    }, []);
+
+    const callback = (row: number, col: number) => {
+        var tempTiles = tiles;
+        tempTiles[row][col] = !tempTiles[row][col];
+
+        // 2D array is not agreeing with me. Concat the new array on the to old one and then slice off the old one...
+        setTiles(tiles.concat(tempTiles).slice(5));
     }
         
 
@@ -34,7 +39,7 @@ const GameGrid: React.FC<IProps> = ({}) => {
             {tiles.map((row, rowId) => 
                 <div>
                     {row.map((tile, colId) => 
-                        <Tile value={tile}/>
+                        <Tile value={tile} row={rowId} col={colId} callback={callback}/>
                     )}
                 </div>
             )}
