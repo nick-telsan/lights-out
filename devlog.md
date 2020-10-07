@@ -7,7 +7,7 @@ Create an implementation of Lights Out using React
 - [X] Clicking a tile should toggle the tile + all adjacent tiles.
 - [X] The game should track and display the total number of moves.
 - [X] The game should have a "restart" button which resets the move count to zero and the game to a random state.
-- [ ] If the user is able to turn off all of the lights, the game should display a success message with the option to restart the game.
+- [X] If the user is able to turn off all of the lights, the game should display a success message with the option to restart the game.
 - [ ] There should be test coverage for each component.
 
 ## Stretch Goal (v1.1 - Lights On)
