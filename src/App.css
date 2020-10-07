@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.unlit-Tile {
+  padding: 50px;
+  background-color: gray;
+  border: black;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.lit-Tile {
+  padding: 50px;
+  background-color: yellow;
+  border: black;
+  border-width: 2px;
+  border-style: solid;
+}
