@@ -29,6 +29,7 @@ const GameGrid: React.FC<IProps> = ({}) => {
         }
 
         initTiles = randomizeTiles(initTiles);
+        setMoves(0);
         setTiles(initTiles);
     }
 
