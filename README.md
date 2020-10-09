@@ -7,8 +7,8 @@ Developer: Nick Jenkins
 
 ## How to run
 1. Clone repo to your machine  
-Unzip `lights-out.zip` to a directory of your choice.  
-run `git clone lights-out.git`  
+Extract `lights-out.tar.gz` to a directory of your choice.  
+In that directory, run `git clone lights-out.git`  
 cd `lights-out`
 
 2. Download packages  
